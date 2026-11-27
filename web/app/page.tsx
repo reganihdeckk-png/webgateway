@@ -74,12 +74,12 @@ export default function HomePage() {
         {loading ? <div className="empty-state">Memuat katalog...</div> :
           error ? <div className="empty-state">{error} Pastikan API Worker sudah dijalankan.</div> :
           visible.length === 0 ? <div className="empty-state">Belum ada produk tersedia. Katalog akan tampil setelah sinkronisasi supplier yang valid.</div> :
-          <div className="product-grid">{visible.map(product=><article className="product-card" key={product.id}>
+          <div className="product-grid">{visible.map(product=><a className="product-card product-link" href={"/products/"+product.slug} key={product.id}>
             <div className="product-image">{product.image_url ? <img src={product.image_url} alt={product.name}/> : <div className="image-placeholder"><Sparkles size={28}/></div>}</div>
             <div className="product-meta">{product.category_name ?? "Digital product"}<span>{product.stock} tersedia</span></div>
             <h3>{product.name}</h3><p>{product.description ?? "Produk digital pilihan dari katalog GLASSY STORE."}</p>
             <div className="product-bottom"><strong>{rupiah(product.price_minor)}</strong><button disabled aria-label="Pembelian belum diaktifkan">Segera hadir</button></div>
-          </article>)}</div>}
+          </a>)}</div>}
       </section>
       <footer><a className="brand" href="#"><span className="brand-mark">G</span> GLASSY STORE</a><span>© {new Date().getFullYear()} GLASSY STORE. Built with clarity.</span></footer>
     </main>
