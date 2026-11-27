@@ -35,7 +35,7 @@ export default function HomePage() {
   );
   const rupiah = (minor: number) => new Intl.NumberFormat("id-ID", {
     style: "currency", currency: "IDR", maximumFractionDigits: 0
-  }).format(minor / 100);
+  }).format(minor);
 
   return (
     <main className="page-shell">
