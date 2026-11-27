@@ -12,6 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
+
+private const val QRIS_IMAGE_URL =
+    "https://cdn.phototourl.com/anon/2026-11-27-1e3a68a5-d52e-4ddb-8880-940577d4e7a1.jpg"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +42,7 @@ private fun GlasyPayApp() {
                         Text("Cara pembayaran", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
                         Spacer(Modifier.height(8.dp))
                         Text("1. Pilih produk atau layanan dan buat pesanan.")
-                        Text("2. Bayar dengan QRIS merchant yang ditampilkan setelah aset QRIS resmi dipasang.")
+                        Text("2. Pindai QRIS merchant di bawah menggunakan aplikasi pembayaran.")
                         Text("3. Simpan bukti transaksi dan kirim melalui fitur unggah resmi saat tersedia.")
                         Text("4. Tunggu admin memeriksa dana masuk sebelum pesanan diproses.")
                     }
@@ -51,7 +55,7 @@ private fun GlasyPayApp() {
                             Text("QRIS merchant", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
                             Spacer(Modifier.weight(1f))
                             TextButton(onClick = { showQris = !showQris }) {
-                                Text(if (showQris) "Sembunyikan" else "Detail")
+                                Text(if (showQris) "Sembunyikan" else "Tampilkan")
                             }
                         }
                         if (showQris) {
@@ -60,9 +64,19 @@ private fun GlasyPayApp() {
                             Text("NMID: ID1026510716552")
                             Text("Kode merchant: A01")
                             Spacer(Modifier.height(12.dp))
+                            AsyncImage(
+                                model = QRIS_IMAGE_URL,
+                                contentDescription = "QRIS merchant GLASSY X PREMKU",
+                                modifier = Modifier.fillMaxWidth().heightIn(max = 440.dp),
+                            )
+                            Spacer(Modifier.height(8.dp))
                             Text(
-                                "Aset gambar QRIS asli belum dipasang. Untuk mencegah pembayaran ke QR yang salah, aplikasi belum menampilkan kode pengganti.",
-                                style = MaterialTheme.typography.bodyMedium
+                                "Jika gambar tidak muncul, periksa koneksi internet atau ketersediaan URL gambar.",
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                            Text(
+                                "Pastikan nama merchant dan NMID pada layar konfirmasi pembayaran cocok sebelum melanjutkan.",
+                                style = MaterialTheme.typography.bodySmall
                             )
                             Spacer(Modifier.height(8.dp))
                             Text(
