@@ -42,3 +42,10 @@ Dokumen ini menetapkan ruang lingkup dan aturan bisnis, bukan bukti bahwa fitur 
 - Persetujuan publikasi bukan verifikasi independen atas kepemilikan, status aktif, atau settlement QRIS.
 - File gambar belum tersimpan sebagai aset di repository dan belum disertakan dalam APK. Jangan menampilkan QR pengganti atau membuat ulang pola QR dari tebakan.
 - Sebelum rilis, unggah file asli sebagai aset statis, pastikan file dapat dipindai oleh beberapa aplikasi pembayaran, dan cocokkan nama merchant/NMID pada layar konfirmasi pembayaran.
+
+
+## URL aset QRIS untuk aplikasi Android
+- URL gambar yang diberikan pengguna: https://cdn.phototourl.com/anon/2026-11-27-1e3a68a5-d52e-4ddb-8880-940577d4e7a1.jpg
+- Android memuat gambar melalui Coil dari URL HTTPS tersebut.
+- Ketersediaan URL dari lingkungan build belum berhasil diverifikasi; uji pemuatan pada perangkat dan pastikan URL mengembalikan gambar secara langsung.
+- Jika URL berubah, perbarui konstanta QRIS_IMAGE_URL di MainActivity.kt.
