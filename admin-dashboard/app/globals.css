@@ -1,0 +1,7 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f6fa; color: #182033; font-family: Arial, sans-serif; }
+main { max-width: 1000px; margin: 48px auto; padding: 24px; }
+header { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.panel { margin-top:24px; padding:24px; border:1px solid #e1e5ed; border-radius:16px; background:white; }
+.muted { color:#657089; line-height:1.6; }
+.tag { display:inline-block; border-radius:999px; background:#fff3d6; color:#815600; padding:6px 10px; font-size:12px; font-weight:700; }
