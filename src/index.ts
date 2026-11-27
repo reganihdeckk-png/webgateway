@@ -38,8 +38,9 @@ async function verifyPassword(password: string, stored: string): Promise<boolean
   return actual === stored;
 }
 function cookie(request: Request, name: string, value: string, maxAge: number): string {
-  const secure = new URL(request.url).protocol === "https:" ? "; Secure" : "";
-  return name+"="+value+"; HttpOnly; Path=/; SameSite=Lax; Max-Age="+maxAge+secure;
+  const secure = new URL(request.url).protocol === "https:";
+  const sameSite = secure ? "None; Secure" : "Lax";
+  return name+"="+value+"; HttpOnly; Path=/; SameSite="+sameSite+"; Max-Age="+maxAge;
 }
 function clearCookie(request: Request): string { return cookie(request,"glassy_session","",0); }
 function sessionFrom(request: Request): string | null {
