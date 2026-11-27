@@ -1,0 +1,18 @@
+{
+  "name": "glassy-store-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "dbLocal": "wrangler d1 migrations apply DB --local",
+    "dbRemote": "wrangler d1 migrations apply DB --remote"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261125.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.50.0"
+  }
+}

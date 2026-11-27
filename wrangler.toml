@@ -1,0 +1,14 @@
+name = "glassy-store-api"
+main = "src/index.ts"
+compatibility_date = "2026-11-27"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "yuss"
+database_id = "fb7c3e0f-eab6-4bcf-8345-a7feb367aece"
+migrations_dir = "migrations"
+
+[vars]
+APP_NAME = "GLASSY STORE"
+APP_ENV = "development"
