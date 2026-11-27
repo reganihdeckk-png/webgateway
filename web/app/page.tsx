@@ -43,7 +43,7 @@ export default function HomePage() {
       <nav className="nav-glass">
         <a className="brand" href="#"><span className="brand-mark">G</span><span>GLASSY<span className="brand-light"> STORE</span></span></a>
         <div className="nav-links"><a href="#products">Produk</a><a href="#trust">Keunggulan</a></div>
-        <a className="nav-cta" href="#products">Jelajahi <ArrowRight size={15}/></a>
+        <div className="nav-actions"><a className="nav-login" href="/login">Masuk</a><a className="nav-cta" href="#products">Jelajahi <ArrowRight size={15}/></a></div>
       </nav>
 
       <section className="hero">
