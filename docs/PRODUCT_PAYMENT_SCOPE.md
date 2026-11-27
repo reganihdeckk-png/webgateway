@@ -34,3 +34,11 @@ GLASYPAY pada tahap pertama digunakan untuk menerima pembayaran atas produk atau
 
 ## Status saat dokumen ini dibuat
 Dokumen ini menetapkan ruang lingkup dan aturan bisnis, bukan bukti bahwa fitur produksi sudah tersedia. Worker saat ini masih memiliki endpoint placeholder untuk sebagian besar API. Dashboard review belum terhubung ke autentikasi, database, atau unggahan privat. Aset gambar QRIS belum dipasang ke aplikasi. Pembayaran live harus tetap nonaktif sampai seluruh prasyarat di atas terpenuhi.
+
+
+## Aset QRIS merchant — persetujuan dan status
+- Pemilik/pengguna menyatakan izin publikasi aset QRIS di repository publik telah diperoleh dari merchant.
+- Informasi yang terlihat pada gambar yang diberikan: nama merchant "GLASSY X PREMKU, Konter" (teks pada gambar terpotong), NMID "ID1026510716552", kode "A01".
+- Persetujuan publikasi bukan verifikasi independen atas kepemilikan, status aktif, atau settlement QRIS.
+- File gambar belum tersimpan sebagai aset di repository dan belum disertakan dalam APK. Jangan menampilkan QR pengganti atau membuat ulang pola QR dari tebakan.
+- Sebelum rilis, unggah file asli sebagai aset statis, pastikan file dapat dipindai oleh beberapa aplikasi pembayaran, dan cocokkan nama merchant/NMID pada layar konfirmasi pembayaran.
