@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {"dev": "wrangler dev", "deploy": "wrangler deploy", "typecheck": "tsc --noEmit", "dbLocal": "wrangler d1 migrations apply GLASSY_DB --local", "dbRemote": "wrangler d1 migrations apply GLASSY_DB --remote"},
-  "devDependencies": {"@cloudflare/workers-types": "^4.20261127.0", "typescript": "^5.9.3", "wrangler": "^4.50.0"}
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "dbLocal": "wrangler d1 migrations apply DB --local",
+    "dbRemote": "wrangler d1 migrations apply DB --remote"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20261127.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.50.0"
+  }
 }
